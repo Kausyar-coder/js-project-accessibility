@@ -7,8 +7,37 @@
   --background: #d1e5fe;
   --page: #f5f0ec;
   --button-hover1: #9863ee;
-  --button-hover2: #e5c6ff;
-  --button-hover3: #f598ad;
+  --button-button: #e5c6ff;
+  --button-hover2: #f598ad;
+  --button-button: #FDC6D4;
+}
+
+/* ----------------------------- 
+        BODDY -
+---------------------------------
+*/
+.body{
+  display: flex;
+  background-color: var(--background);
+
+
+}
+.header{
+   height: 200px;
+   
+}
+.nav{
+  height: 500px;
+  background-color: aqua;
+
+}
+.nav-items{
+  background-color: var(--button-button);
+  display: flex;
+  justify-content: center;
+  align-items: ;
+  height: 40px;
+
 }
 
 /* ----------------------------- 
