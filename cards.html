@@ -59,8 +59,7 @@
       <div class="form-control">
         <label
           for="email"
-          id="email-label"
-        >Email:</label>
+          id="email-label" >Email:</label>
         <input
           type="email"
           id="email"
@@ -69,8 +68,11 @@
           aria-required="true"
         />
       </div>
+      <div class="form-control">
+        <button type="click" id="continue-button">Continue to questions</button>
+      </div>
 
-      <fieldset>
+      <fieldset id="question-one" hidden aria-hidden="true">
         <legend>
           Does everyone in the family agree on the decision to get a pet?
         </legend>
@@ -98,7 +100,7 @@
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset id="question-two" hidden aria-hidden="true">
         <legend>
           You live in:
         </legend>
@@ -137,7 +139,7 @@
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset id="question-three" hidden aria-hidden="true">
         <legend>
           Environment:
         </legend>
@@ -175,13 +177,13 @@
           <label for="suburb">Suburb</label>
         </div>
       </fieldset>
-      <button type="submit">Submit interest</button>
+      <button id="submit-button" type="submit" hidden aria-hidden="true">Submit interest</button>
     </form>
   </section>
 
 <section id="response" hidden>
   <h2>Thank you for your interest</h2>
-  <div id="response-content"></div>
+  <div id="response-content"> "aria-live=polite"</div>
 </section>
 
     <footer class="footer" role="contentinfo">

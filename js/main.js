@@ -227,9 +227,80 @@ const adoptionForm = document.getElementById("adoption-form");
 const responseSection = document.getElementById("response");
 const responseContent = document.getElementById("response-content");
 const submissionForm = document.getElementById("submission-form");
+const continueButton = document.getElementById("continue-button");
+const questionOne = document.getElementById("question-one");
+const questionTwo = document.getElementById("question-two");
+const questionThree = document.getElementById("question-three");
+const agreeRadios = document.querySelectorAll('input[name="agree"]');
+const accommodationRadios = document.querySelectorAll('input[name="accommodation"]');
+const environmentRadios = document.querySelectorAll('input[name="environment"]');
+const submitButton = document.getElementById("submit-button");
 let userName = "";
 
-document.addEventListener("DOMContentLoaded", () => {});
+function toggleRequired(elements, required) {
+  elements.forEach(element => {
+    if (required) {
+      element.setAttribute('required', '');
+      element.setAttribute('aria-required', 'true');
+    } else {
+      element.removeAttribute('required');
+      element.removeAttribute('aria-required');
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  toggleRequired(agreeRadios, false);
+  toggleRequired(accommodationRadios, false);
+  toggleRequired(environmentRadios, false);
+});
+
+continueButton.addEventListener("click", () => {
+ questionOne.hidden = false;
+  questionOne.setAttribute("aria-hidden", "false");
+  toggleRequired(agreeRadios, true);
+  submissionForm.scrollIntoView({ behavior: "smooth" });
+});
+
+agreeRadios.forEach(radio => {
+radio.addEventListener("change", (e) => {
+    questionTwo.hidden = false;
+    questionTwo.setAttribute("aria-hidden", "false");
+    toggleRequired(accommodationRadios, true);
+    submissionForm.scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+accommodationRadios.forEach(radio => {
+radio.addEventListener("change", (e) => {
+    questionThree.hidden = false;
+    questionThree.setAttribute("aria-hidden", "false");
+    toggleRequired(environmentRadios, true);
+    adoptionForm.scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+environmentRadios.forEach(radio => {
+radio.addEventListener("change", (e) => {
+  submitButton.hidden = false; 
+  submitButton.setAttribute("aria-hidden", "false");
+  submitButton.scrollIntoView({ behavior: "smooth" });
+});
+});
+
+function resetForm() {
+  questionOne.hidden = true;
+  questionOne.setAttribute("aria-hidden", "true");
+  questionTwo.hidden = true;
+  questionTwo.setAttribute("aria-hidden", "true");
+  questionThree.hidden = true;
+  questionThree.setAttribute("aria-hidden", "true");
+  submitButton.hidden = true;
+  submitButton.setAttribute("aria-hidden", "true");
+  toggleRequired(agreeRadios, false);
+  toggleRequired(accommodationRadios, false);
+  toggleRequired(environmentRadios, false);
+}
 
 adoptionForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -246,4 +317,8 @@ adoptionForm.addEventListener("submit", (e) => {
   responseSection.focus();
 
   submissionForm.reset();
+
+  resetForm();
 });
+
+
