@@ -39,14 +39,12 @@
       <section class="dogs-card-container"></section>
     </main>
 
-     <section id="adoption-form"><!-- Arta -->
-    <h2>Submission of interest</h2>
+    <section id="adoption-form" aria-labelledby="submission-title"><!-- Arta -->
+    <h2 id="submission-title">Submission of interest</h2>
+
     <form id="submission-form">
       <div class="form-control">
-        <label
-          for="name"
-          id="name-label"
-        >Full name:</label>
+        <label for="name" id="name-label" >Full name:</label>
         <input
           type="text"
           id="name"
@@ -57,9 +55,7 @@
       </div>
 
       <div class="form-control">
-        <label
-          for="email"
-          id="email-label" >Email:</label>
+        <label for="email" id="email-label" >Email:</label>
         <input
           type="email"
           id="email"
@@ -68,11 +64,12 @@
           aria-required="true"
         />
       </div>
+
       <div class="form-control">
-        <button type="click" id="continue-button">Continue to questions</button>
+        <button id="continue-button" type="button">Continue to questions</button>
       </div>
 
-      <fieldset id="question-one" hidden aria-hidden="true">
+      <fieldset id="question-one" hidden="true">
         <legend>
           Does everyone in the family agree on the decision to get a pet?
         </legend>
@@ -100,7 +97,7 @@
         </div>
       </fieldset>
 
-      <fieldset id="question-two" hidden aria-hidden="true">
+      <fieldset id="question-two" hidden="true">
         <legend>
           You live in:
         </legend>
@@ -113,7 +110,7 @@
             required
             aria-required="true"
           />
-          <label for="appartment">Apartment</label>
+          <label for="apartment">Apartment</label>
         </div>
         <div class="radio-group">
           <input
@@ -139,7 +136,7 @@
         </div>
       </fieldset>
 
-      <fieldset id="question-three" hidden aria-hidden="true">
+      <fieldset id="question-three" hidden="true">
         <legend>
           Environment:
         </legend>
@@ -177,13 +174,13 @@
           <label for="suburb">Suburb</label>
         </div>
       </fieldset>
-      <button id="submit-button" type="submit" hidden aria-hidden="true">Submit interest</button>
+      <button id="submit-button" type="submit" hidden="true">Submit interest</button>
     </form>
   </section>
 
-<section id="response" hidden>
+<section id="response" class="visually-hidden">
   <h2>Thank you for your interest</h2>
-  <div id="response-content"> "aria-live=polite"</div>
+  <div id="response-content" aria-live="polite" aria-atomic="true"></div>
 </section>
 
     <footer class="footer" role="contentinfo">

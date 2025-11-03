@@ -226,7 +226,7 @@ legend {
   padding: 0 0.5rem;
 }
 
-button[type="click"] {
+button[type="button"] {
   background-color: var(--background);
   padding: 0.75rem 1.5rem;
   border: none;
@@ -255,6 +255,38 @@ button[type="click"]:focus {
 .radio-group label {
   display: inline-block;
   margin-left: 0.5rem;
+}
+
+/*Visually hidden but still announced by screen readers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* prevent text wrap */
+  border: 0;
+}
+
+/**Focus indicator for keyboard users*/
+:focus-visible {
+  outline: 3px solid #0b84ff;
+  outline-offset: 2px;
+}
+
+/*Interactive controls show focus clearly*/
+input:focus-visible,
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #0b84ff;
+  outline-offset: 2px;
+}
+
+[aria-invalid="true"] {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12);
 }
 
 button[type="submit"] {
