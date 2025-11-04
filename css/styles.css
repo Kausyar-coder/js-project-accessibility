@@ -53,9 +53,10 @@
   font-size: 90px;
   color: var(--footer-bg);
   pad: 10px;
+
 }
 
-/* I can't get the text to align on the image
+/* I can't get the text, to align on the image
 .hero-text h3 {
   position: absolute;
   top: 550px;
