@@ -257,45 +257,58 @@
   margin-bottom: 100px;
 }
 
-h2 {
+#adoption-form h2 {
   margin-bottom: 1.5rem;
 }
 
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+.form-control {
+  margin-bottom: 1rem;
 }
 
-input[type="text"],
-input[type="email"] {
+#adoption-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+#adoption-form input[type="text"],
+#adoption-form input[type="email"] {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
-  transition: border-color 0.2s;
+  transition: box-shadow .15s, border-color .15s;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus {
+#adoption-form input[type="text"]:focus-visible,
+#adoption-form input[type="email"]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
-fieldset {
+#adoption-form fieldset {
   margin: 1.5rem 0;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-legend {
+#adoption-form legend {
   font-weight: 500;
   padding: 0 0.5rem;
 }
 
-button[type="button"] {
+#adoption-form .radio-group {
+  margin: 0.5rem 0;
+}
+
+#adoption-form .radio-group label {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+#adoption-form button {
   background-color: var(--background);
   padding: 0.75rem 1.5rem;
   border: none;
@@ -307,24 +320,15 @@ button[type="button"] {
   margin-top: 1rem;
 }
 
-button[type="click"]:hover {
-  background-color: var(--button-hover2);
-  color: black;
+#adoption-form button:hover {
+  background: #e6e9ee;
 }
 
-button[type="click"]:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.4);
+#adoption-form button:focus-visible {
+  outline: 3px solid #0b84ff;
+  outline-offset: 2px;
 }
 
-.radio-group {
-  margin: 0.5rem 0;
-}
-
-.radio-group label {
-  display: inline-block;
-  margin-left: 0.5rem;
-}
 
 /*Visually hidden but still announced by screen readers */
 .visually-hidden {
@@ -335,7 +339,8 @@ button[type="click"]:focus {
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* prevent text wrap */
+  white-space: nowrap;
+  /* prevent text wrap */
   border: 0;
 }
 
@@ -345,39 +350,20 @@ button[type="click"]:focus {
   outline-offset: 2px;
 }
 
-/*Interactive controls show focus clearly*/
-input:focus-visible,
-button:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #0b84ff;
-  outline-offset: 2px;
+.error {
+  margin-top: 0.5rem;
+  color: #dc3545;
+  font-size: 0.875rem;
 }
 
-[aria-invalid="true"] {
+.hint {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+#adoption-form [aria-invalid="true"] {
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12);
-}
-
-button[type="submit"] {
-  background-color: var(--background);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-button[type="submit"]:hover {
-  background-color: var(--button-hover2);
-  color: black;
-}
-
-button[type="submit"]:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.4);
 }
 
 #response {
@@ -389,6 +375,9 @@ button[type="submit"]:focus {
   text-align: center;
 }
 
+:focus {
+  outline: 2px solid #007BFF;
+}
 /* -----------------------------
    FOOTER styles (from origin/Footer)
 ---------------------------------*/
