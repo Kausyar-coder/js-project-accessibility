@@ -18,6 +18,10 @@
   --text-light: #5a1a1a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* -----------------------------
    HERO and HEADER styles
 ---------------------------------*/
@@ -391,57 +395,72 @@ button[type="submit"]:focus {
 
 /* -----------------------------
    FOOTER styles (from origin/Footer)
----------------------------------*/
+*/
 .footer {
   background-color: var(--footer-bg);
   color: var(--text-light);
-  padding: 60px 0 30px;
   font-family: "Poppins", sans-serif;
 }
 
-.paw-icon {
-  width: 80px;
-  height: 80px;
-  color: #eaeaea;
-  transform: rotate(-90deg);
-  display: block;
-  margin: 10px auto 0;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 30px 10px 0;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.footer-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: start;
-  justify-items: center;
-  gap: 60px;
-  text-align: left;
-  padding-bottom: 20px;
+.paw-icon {
+  width: 120px;
+  height: 120px;
+  color: #eaeaea;
+  transform: rotate(-90deg);
+  margin-top: -10px; 
 }
 
 .footer h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  margin-bottom: 1rem;
   color: #fff;
+  margin-bottom: 1rem;
 }
-.footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+
 .footer a {
-  color: #ccc;
+  color: #eaeaea;
   text-decoration: none;
-  transition: color 0.3s;
   font-weight: 600;
+  transition: color 0.3s;
 }
+
 .footer a:hover,
 .footer a:focus-visible {
   color: var(--button-hover2);
   outline: none;
+}
+
+.socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials a svg {
+  width: 24px;
+  height: 24px;
+  color: #eaeaea;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.socials a:hover svg,
+.socials a:focus-visible svg {
+  color: var(--button-hover3);
+  transform: scale(1.1);
 }
 
 .footer-divider {
@@ -449,54 +468,40 @@ button[type="submit"]:focus {
   border-top: 1px solid #3a3d4a;
   margin: 40px 0 20px;
 }
+
 .footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #3a3d4a;
   font-size: 0.9rem;
   color: #bbb;
-}
-
-.socials {
-  text-align: center;
-}
-.socials h2 {
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-.socials ul {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 20px;
-}
-.socials a svg {
-  width: 24px;
-  height: 24px;
-  color: #eaeaea;
-  transition: color 0.3s, transform 0.3s;
-}
-.socials a:hover svg,
-.socials a:focus-visible svg {
-  color: var(--button-hover3);
-  transform: scale(1.1);
+  text-align: left;
 }
 
 @media (max-width: 800px) {
   .footer-container {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;       
+    align-items: center;          
     text-align: center;
     gap: 40px;
+    padding: 40px 20px;
   }
+
+  .paw-icon {
+    width: 90px;
+    height: 90px;
+    margin-top: 0;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+
   .socials ul {
     justify-content: center;
-  }
-  .socials {
-    text-align: center;
   }
 }
