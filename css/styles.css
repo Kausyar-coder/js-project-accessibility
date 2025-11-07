@@ -19,7 +19,7 @@
 }
 
 /* -----------------------------
-   HERO and HEADER styles
+   HERO and HEADER styles Carina
 ---------------------------------*/
 .header{
   min-height: 200px;
@@ -36,7 +36,12 @@
   position: relative;
   background-size: cover;
   overflow: hidden;
-  flex-wrap: wrap;
+  height: 1000px;
+  flex-wrap: nowrap;
+  background-image: url(../img/Gemini_Generated_Image_q8ixlmq8ixlmq8ix.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #img {
@@ -55,22 +60,56 @@
   pad: 10px;
 }
 
-/* I can't get the text to align on the image
-.hero-text h3 {
-  position: absolute;
-  top: 550px;
-  left: 30px;
-  font-size: 30px;
-  color: var(--footer-bg);
-  pad: 10px;
-}
-.hero-text p {
-  position: absolute;
 
-  color: var(--footer-bg);
-  pad: 10px;
+
+/*nav menu*/
+.nav-items {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 100px;
+  background-color: var(--background);
+  height: 200px;
 }
-  */
+
+/*pawprint*/
+.icon {
+  fill: var(--button-hover1);
+  color: var(--button-hover1);
+}
+
+.page-icon {
+  display: flex;
+  font-size: 25px;
+}
+
+/*menu*/
+.menu {
+  background-color: var(--background);
+}
+
+#button {
+  background-color: var(--button-button);
+  border-color: var(--button-hover1);
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 3px;
+  margin-top: 10px;
+  height: 45px;
+  width: 100px;
+  cursor: pointer;
+}
+#button:hover {
+  background-color: var(--button-hover1);
+  color: #fff;
+  transition: var(--transition);
+}
+
 /*media for different sizes*/
 
 @media (min-width: 1000px){
@@ -103,53 +142,6 @@
 
   
 }
-/*nav menu*/
-.nav-items {
-  position: sticky;
-  top: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0 20px;
-  background-color: var(--background);
-  height: 200px;
-}
-
-/*pawprint*/
-.icon {
-  fill: var(--button-hover1);
-  color: var(--button-hover1);
-}
-
-/* the text does not wrap fast enough when the page is rezised, 500px not vissible*/
-.page-icon {
-  display: flex;
-  margin-left: -150px;
-}
-
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  background-color: var(--background);
-}
-
-#button {
-  background-color: var(--button-button);
-  border-color: var(--button-hover1);
-  border-radius: 40px;
-  height: 30px;
-  width: 75px;
-  cursor: pointer;
-}
-#button:hover {
-  background-color: var(--button-hover1);
-  color: #fff;
-  transition: var(--transition);
-}
-
-
 
 
 
