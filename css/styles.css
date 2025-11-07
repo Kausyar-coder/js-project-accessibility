@@ -71,6 +71,7 @@
   top: 0;
   display: flex;
   flex-wrap: wrap;
+  min-width: 300px;
   justify-content: space-around;
   align-items: center;
   padding: 0 100px;
@@ -106,8 +107,9 @@
   font-size: 16px;
   font-weight: bold;
   margin: 3px;
+  margin-top: 10px;
   height: 45px;
-  width: 120px;
+  width: 130px;
   cursor: pointer;
 }
 #button:hover {
@@ -150,7 +152,14 @@
   }
 }
 
+@media (max-width: 500px){
 
+   #button{
+    height: 20px;
+    width: 70px;
+    font-size: 13px;
+  }
+}
 
 /* -----------------------------
    CARDS KAUSAR
